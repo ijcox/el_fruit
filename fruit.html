@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fruit Directory</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #f5f0e8;
+    color: #3a3228;
+    min-height: 100vh;
+  }
+
+  .fd-header {
+    background-color: #4a7c59;
+    color: #e8f0e9;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 4px solid #3a6247;
+  }
+
+  .fd-header h1 {
+    font-size: 2.8rem;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    color: #e8f0e9;
+    margin-bottom: 0.4rem;
+  }
+
+  .fd-header p {
+    font-size: 1rem;
+    color: #b8d4bc;
+    letter-spacing: 0.02em;
+  }
+
+  .fd-stats {
+    font-size: 0.85rem;
+    color: #9abfa0;
+    margin-top: 0.5rem;
+  }
+
+  .fd-nav {
+    background-color: #3a3228;
+    padding: 0.75rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #2a2420;
+  }
+
+  .fd-nav a {
+    color: #c8b89a;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+    font-weight: normal;
+  }
+
+  .fd-nav a:hover {
+    background-color: #4a7c59;
+    color: #e8f0e9;
+  }
+
+  .fd-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  .fd-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .fd-letter-heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 60px;
+  }
+
+  .fd-letter {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #4a7c59;
+    width: 2.2rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .fd-divider {
+    flex: 1;
+    height: 1px;
+    background-color: #c8b89a;
+    opacity: 0.5;
+  }
+
+  .fd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px 10px;
+    padding-left: 3.2rem;
+  }
+
+  .fd-fruit-link {
+    display: block;
+    text-decoration: none;
+    color: #3a3228;
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border-left: 2px solid transparent;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fd-fruit-link:hover {
+    background-color: #e0d8c8;
+    border-left-color: #4a7c59;
+    color: #2a5c3a;
+  }
+
+  .fd-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #3a3228;
+    color: #8a7a68;
+    font-size: 0.85rem;
+  }
+
+  .fd-back-top {
+    display: block;
+    text-align: center;
+    margin: 2rem auto 0;
+    width: fit-content;
+    text-decoration: none;
+    color: #4a7c59;
+    font-size: 0.9rem;
+    border: 1px solid #4a7c59;
+    padding: 6px 16px;
+    border-radius: 4px;
+  }
+
+  .fd-back-top:hover {
+    background-color: #4a7c59;
+    color: #e8f0e9;
+  }
+</style>
+</head>
+<body>
+
+<div class="fd-header" id="fd-top">
+  <h1>Fruit Directory</h1>
+  <p>An encyclopedic index of fruits</p>
+  <div class="fd-stats">213 fruits listed</div>
+</div>
+
+<nav class="fd-nav" aria-label="Alphabetical navigation">
+  <a href="#fd-A">A</a><a href="#fd-B">B</a><a href="#fd-C">C</a>
+  <a href="#fd-D">D</a><a href="#fd-E">E</a><a href="#fd-F">F</a>
+  <a href="#fd-G">G</a><a href="#fd-H">H</a><a href="#fd-I">I</a>
+  <a href="#fd-J">J</a><a href="#fd-K">K</a><a href="#fd-L">L</a>
+  <a href="#fd-M">M</a><a href="#fd-N">N</a><a href="#fd-O">O</a>
+  <a href="#fd-P">P</a><a href="#fd-Q">Q</a><a href="#fd-R">R</a>
+  <a href="#fd-S">S</a><a href="#fd-T">T</a><a href="#fd-U">U</a>
+  <a href="#fd-V">V</a><a href="#fd-W">W</a><a href="#fd-X">X</a>
+  <a href="#fd-Y">Y</a><a href="#fd-Z">Z</a>
+</nav>
+
+<main class="fd-main">
+
+  <section class="fd-section" id="fd-A">
+    <div class="fd-letter-heading"><span class="fd-letter">A</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Abiu">Abiu</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Ackee">Ackee</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=African%20Star%20Apple">African Star Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Ambarella">Ambarella</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Apple">Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Apricot">Apricot</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Araza">Araza</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Asian%20Pear">Asian Pear</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Atemoya">Atemoya</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Avocado">Avocado</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-B">
+    <div class="fd-letter-heading"><span class="fd-letter">B</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Babaco">Babaco</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Banana">Banana</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Barbadine">Barbadine</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Barbados%20Cherry">Barbados Cherry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Bael%20Fruit">Bael Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Bayberry%20Fruit">Bayberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Bearberry">Bearberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Bilberry">Bilberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Bitter%20Melon">Bitter Melon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Black%20Cherry">Black Cherry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Black%20Currant">Black Currant</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Black%20Mulberry">Black Mulberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Blackberry%20Fruit">Blackberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Blood%20Orange">Blood Orange</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Blueberry">Blueberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Boysenberry">Boysenberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Breadfruit">Breadfruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Buddha%27s%20Hand">Buddha's Hand</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-C">
+    <div class="fd-letter-heading"><span class="fd-letter">C</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cacao">Cacao</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Calamansi">Calamansi</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Canary%20Melon">Canary Melon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cantaloupe">Cantaloupe</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cape%20Gooseberry">Cape Gooseberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Caqui">Caqui</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Carambola">Carambola</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cashew%20Apple">Cashew Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Casimiroa">Casimiroa</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cempedak">Cempedak</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cherimoya">Cherimoya</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cherry%20Fruit">Cherry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Citron">Citron</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Clementine">Clementine</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cloudberry">Cloudberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Coconut">Coconut</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Crab%20Apple">Crab Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cranberry">Cranberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Cucumber">Cucumber</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Currant">Currant</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Custard%20Apple">Custard Apple</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-D">
+    <div class="fd-letter-heading"><span class="fd-letter">D</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Damson">Damson</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Date">Date</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Date%20Plum">Date Plum</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Davidson%27s%20Plum">Davidson's Plum</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Dead%20Man%27s%20Fingers">Dead Man's Fingers</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Dewberry">Dewberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Dragon%20Fruit">Dragon Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Durian">Durian</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-E">
+    <div class="fd-letter-heading"><span class="fd-letter">E</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Egg%20Fruit">Egg Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Elderberry">Elderberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Elephant%20Apple">Elephant Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Emblica">Emblica</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Entawak">Entawak</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Etrog">Etrog</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-F">
+    <div class="fd-letter-heading"><span class="fd-letter">F</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Feijoa">Feijoa</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Fig%20Fruit">Fig</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Finger%20Lime">Finger Lime</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Fuyu%20Persimmon">Fuyu Persimmon</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-G">
+    <div class="fd-letter-heading"><span class="fd-letter">G</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Galia%20Melon">Galia Melon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Genip">Genip</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Gooseberry">Gooseberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Governor%27s%20Plum">Governor's Plum</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Grapefruit">Grapefruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Grape">Grape</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Greengage">Greengage</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Grumichama">Grumichama</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Guava">Guava</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Guyabano">Guyabano</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-H">
+    <div class="fd-letter-heading"><span class="fd-letter">H</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Hackberry">Hackberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Hala%20Fruit">Hala Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Hardy%20Kiwi">Hardy Kiwi</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Hawthorn%20Berry">Hawthorn Berry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Honeyberry">Honeyberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Honeydew%20Melon">Honeydew Melon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Huckleberry">Huckleberry</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-I">
+    <div class="fd-letter-heading"><span class="fd-letter">I</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Ilama">Ilama</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Indian%20Fig">Indian Fig</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Indian%20Gooseberry">Indian Gooseberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Indian%20Plum">Indian Plum</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-J">
+    <div class="fd-letter-heading"><span class="fd-letter">J</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Jaboticaba">Jaboticaba</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Jackfruit">Jackfruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Jambolan">Jambolan</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Japanese%20Persimmon">Japanese Persimmon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Java%20Apple">Java Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Java%20Plum">Java Plum</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Jocote">Jocote</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Jostaberry">Jostaberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Jujube">Jujube</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-K">
+    <div class="fd-letter-heading"><span class="fd-letter">K</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Kaffir%20Lime">Kaffir Lime</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Kaki">Kaki</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Kandis">Kandis</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Kepel%20Fruit">Kepel Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Key%20Lime">Key Lime</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Kiwi">Kiwi</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Kiwano">Kiwano</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Kumquat">Kumquat</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-L">
+    <div class="fd-letter-heading"><span class="fd-letter">L</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Langsat">Langsat</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Lemon">Lemon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Lime">Lime</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Loganberry">Loganberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Longan">Longan</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Loquat">Loquat</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Lucuma">Lucuma</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Lychee">Lychee</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-M">
+    <div class="fd-letter-heading"><span class="fd-letter">M</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Mamey%20Sapote">Mamey Sapote</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Mammee%20Apple">Mammee Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Mandarin">Mandarin</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Mango">Mango</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Mangosteen">Mangosteen</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Marionberry">Marionberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Mayhaw">Mayhaw</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Medlar">Medlar</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Meyer%20Lemon">Meyer Lemon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Miracle%20Fruit">Miracle Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Mombin">Mombin</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Monstera%20Deliciosa">Monstera Deliciosa</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Morello%20Cherry">Morello Cherry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Mulberry%20Fruit">Mulberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Muntingia">Muntingia</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Muscadine%20Grape">Muscadine Grape</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Muskmelon">Muskmelon</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-N">
+    <div class="fd-letter-heading"><span class="fd-letter">N</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Nance">Nance</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Nashi%20Pear">Nashi Pear</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Nectarine">Nectarine</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Noni">Noni</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Nopales">Nopales</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-O">
+    <div class="fd-letter-heading"><span class="fd-letter">O</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Olive">Olive</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Orange">Orange</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Osage%20Orange">Osage Orange</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-P">
+    <div class="fd-letter-heading"><span class="fd-letter">P</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Papaya">Papaya</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Passion%20Fruit">Passion Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pawpaw">Pawpaw</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Peach">Peach</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pear">Pear</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pepino%20Melon">Pepino Melon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Persian%20Lime">Persian Lime</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Persimmon">Persimmon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pineapple">Pineapple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pineapple%20Guava">Pineapple Guava</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pitanga">Pitanga</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pitaya">Pitaya</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Plantain">Plantain</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Plum">Plum</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Plumcot">Plumcot</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pomegranate%20Fruit">Pomegranate</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pomelo">Pomelo</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Prickly%20Pear">Prickly Pear</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Pulasan">Pulasan</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-Q">
+    <div class="fd-letter-heading"><span class="fd-letter">Q</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Quandong">Quandong</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Quince">Quince</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-R">
+    <div class="fd-letter-heading"><span class="fd-letter">R</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Rambutan">Rambutan</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Raspberry">Raspberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Red%20Banana">Red Banana</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Red%20Currant">Red Currant</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Rose%20Apple">Rose Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Rose%20Hip">Rose Hip</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-S">
+    <div class="fd-letter-heading"><span class="fd-letter">S</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Salak">Salak</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Santol">Santol</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Sapodilla">Sapodilla</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Sapote">Sapote</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Satsuma">Satsuma</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Sea%20Buckthorn">Sea Buckthorn</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Serviceberry">Serviceberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Seville%20Orange">Seville Orange</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Sharon%20Fruit">Sharon Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Sloe">Sloe</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Soursop">Soursop</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Star%20Apple">Star Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Star%20Fruit">Star Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Strawberry">Strawberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Strawberry%20Guava">Strawberry Guava</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Strawberry%20Tree%20Fruit">Strawberry Tree Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Sugar%20Apple">Sugar Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Surinam%20Cherry">Surinam Cherry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Sweet%20Lemon">Sweet Lemon</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-T">
+    <div class="fd-letter-heading"><span class="fd-letter">T</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Tamarillo">Tamarillo</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Tamarind">Tamarind</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Tangelo">Tangelo</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Tangerine">Tangerine</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Tayberry">Tayberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Tomato">Tomato</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Tree%20Melon">Tree Melon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Tropical%20Almond">Tropical Almond</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-U">
+    <div class="fd-letter-heading"><span class="fd-letter">U</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Ugli%20Fruit">Ugli Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Umbu">Umbu</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Ume">Ume</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-V">
+    <div class="fd-letter-heading"><span class="fd-letter">V</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Velvet%20Tamarind">Velvet Tamarind</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Vietnamese%20Guava">Vietnamese Guava</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-W">
+    <div class="fd-letter-heading"><span class="fd-letter">W</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Watermelon">Watermelon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Wax%20Apple">Wax Apple</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Wax%20Jambu">Wax Jambu</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=White%20Currant">White Currant</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=White%20Mulberry">White Mulberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Wild%20Strawberry">Wild Strawberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Wolfberry">Wolfberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Wood%20Apple">Wood Apple</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-X">
+    <div class="fd-letter-heading"><span class="fd-letter">X</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Ximenia">Ximenia</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-Y">
+    <div class="fd-letter-heading"><span class="fd-letter">Y</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Yellow%20Mombin">Yellow Mombin</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Yellow%20Passion%20Fruit">Yellow Passion Fruit</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Yellow%20Watermelon">Yellow Watermelon</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Youngberry">Youngberry</a>
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Yuzu">Yuzu</a>
+    </div>
+  </section>
+
+  <section class="fd-section" id="fd-Z">
+    <div class="fd-letter-heading"><span class="fd-letter">Z</span><div class="fd-divider"></div></div>
+    <div class="fd-grid">
+      <a class="fd-fruit-link" href="/o/page?o=word&w=Ziziphus">Ziziphus</a>
+    </div>
+  </section>
+
+  <a class="fd-back-top" href="#fd-top">Back to top</a>
+
+</main>
+
+<footer class="fd-footer">
+  Fruit Directory &mdash; An encyclopedic reference to fruits of the world
+</footer>
+
+</body>
+</html>
