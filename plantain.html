@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plantain | Herb Profile</title>
+  <style>
+    :root {
+      --bg: #f5f1ea;
+      --card: #ffffff;
+      --text: #1f2b22;
+      --muted: #4d5a50;
+      --accent: #5c9b7a;
+      --border: #d7c9b1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: 0.02em;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    }
+    h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .meta div {
+      padding: 12px;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      background: #fffdf8;
+    }
+    .swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .swatch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fffefb;
+      font-size: 14px;
+    }
+    .dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    a {
+      color: #1f6a94;
+    }
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .header-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .action-link {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #e7f2eb;
+      color: #1f6a94;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .action-link:hover {
+      background: #d9ecde;
+    }
+    .categories {
+      margin: 28px 0 10px;
+      display: grid;
+      gap: 14px;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .category {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+    h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef5ef;
+      border: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .chakra-root { background: #fdeceb; border-color: #f7c9c8; }
+    .chakra-sacral { background: #fff0e1; border-color: #ffd6b5; }
+    .chakra-solar { background: #fff8dd; border-color: #ffe9a3; }
+    .chakra-heart { background: #ecf7f1; border-color: #c4e5d2; }
+    .chakra-throat { background: #e6f2fb; border-color: #c1daf4; }
+    .chakra-brow { background: #ece8f7; border-color: #d1c8ed; }
+    .chakra-crown { background: #f4e8f7; border-color: #e0c8ec; }
+    .chakra-root-soft { background: #fdf2f3; border-color: #f8d7dc; }
+    .chakra-sacral-soft { background: #fff5ed; border-color: #ffdfc6; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="title-group">
+        <h1>Plantain</h1>
+        <span class="tagline">Concise field and materia medica snapshot</span>
+      </div>
+      <div class="header-actions">
+        <a class="action-link" href="/o/page?o=word&w=Herbs" rel="noopener" title="Herbs search">Herbs Search</a>
+        <a class="action-link image-link" href="https://www.google.com/search?tbm=isch&q=Plantain+herb" onclick="window.open('https://www.google.com/search?tbm=isch&q=Plantain+herb','img','width=1100,height=900'); return false;" rel="noopener noreferrer" title="Image search">&#128269;</a>
+      </div>
+    </header>
+
+    <div class="meta">
+      <div><strong>Medicinal properties</strong><br>Traditionally cited for supportive actions; consult current monographs before use.</div>
+      <div><strong>Category</strong><br>💚 Medicinals</div>
+      <div><strong>Main chemical focus</strong><br>Aromatic essential oils, flavonoids, and phenolic acids</div>
+      <div><strong>Growing climate</strong><br>Temperate to Mediterranean; well-drained soil, steady moisture, and at least half-day sun</div>
+      <div><strong>Continents</strong><br>Naturalized or cultivated across multiple continents wherever the climate suits</div>
+      <div><strong>Color swatches</strong><div class="swatches"><div class="swatch"><span class="dot" style="background:#2f6f4e;"></span><span>Leafy green</span></div>
+<div class="swatch"><span class="dot" style="background:#d9896a;"></span><span>Bloom</span></div>
+<div class="swatch"><span class="dot" style="background:#c7b299;"></span><span>Dried herb</span></div></div></div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h2>Harvest timing</h2>
+        <p>Early morning in late spring to midsummer, just before full flowering</p>
+      </div>
+      <div class="card">
+        <h2>What to harvest</h2>
+        <p>Leafy tops and flowers before peak bloom</p>
+      </div>
+      <div class="card">
+        <h2>Processing</h2>
+        <p>Bundle aerial parts loosely, hang in a dark ventilated room, and crumble once fully dry</p>
+      </div>
+      <div class="card">
+        <h2>How to apply</h2>
+        <p>Infusion (tea), tincture, culinary use, or topical compress depending on tradition</p>
+      </div>
+      <div class="card">
+        <h2>Safety note</h2>
+        <p>Confirm identification, dosage, and contraindications with regional pharmacopoeias or a qualified clinician before internal or topical use.</p>
+      </div>
+    </div>
+    <section class="categories">
+      <div class="category-grid">
+        <div class="category chakra-root">
+          <h3>Safety & contraindications</h3>
+          <p>Baseline toxicity: generally low for culinary-use plants unless noted otherwise; verify species-specific limits. Avoid high intake in pregnancy or for young children unless supervised. Screen for interactions with anticoagulant, antihypertensive, sedative, or hypoglycemic medications.</p>
+        </div>
+        <div class="category chakra-sacral">
+          <h3>Evidence & source</h3>
+          <p>Tradition: Western culinary herbalism and regional folk practice. Evidence: Primarily traditional use; consult monographs and small clinical reports for details.</p>
+        </div>
+        <div class="category chakra-solar">
+          <h3>Preparation & dose</h3>
+          <p>Infusion of 1–2 tsp dried aerial parts steeped 10–15 min; tincture 1:5 in 25–45% alcohol, 2–4 mL up to 3x/day; fresh poultice as indicated</p>
+        </div>
+        <div class="category chakra-heart">
+          <h3>Part used & harvest</h3>
+          <p>Leafy tops and flowers before peak bloom. Season: Early morning in late spring to midsummer, just before full flowering. Fresh aromatic leaves excel when used promptly; roots, barks, and seeds keep best once fully dried.</p>
+        </div>
+        <div class="category chakra-throat">
+          <h3>Actions/indications tags</h3>
+          <p>Working tags to aid filtering and formulation.</p>
+          <div class="tag-row"><span class="tag">digestive</span>
+<span class="tag">tonic</span>
+<span class="tag">calming</span>
+<span class="tag">culinary</span></div>
+        </div>
+        <div class="category chakra-brow">
+          <h3>Primary uses</h3>
+          <p>General culinary and folk support for gut comfort, light tonic effects, and bridging aromatic warmth into daily food and tea routines.</p>
+        </div>
+        <div class="category chakra-crown">
+          <h3>Growth & cultivation</h3>
+          <p>Hardiness: many types manage in USDA 4–9 with winter mulch; prefers full sun to light shade and well-drained but moist soil; pots help control vigor and avoid spread. Use clean starts, avoid lookalikes, and monitor for invasive spread.</p>
+        </div>
+        <div class="category chakra-root-soft">
+          <h3>Flavor/aroma profile</h3>
+          <p>Mild savory or bittersweet with earthy or marine notes; adapts to soups, sautéed greens, vinegars, and infusion blends for everyday tonics</p>
+        </div>
+        <div class="category chakra-sacral-soft">
+          <h3>Compliance/regulatory</h3>
+          <p>Generally GRAS in culinary amounts; check country-specific limits for concentrated extracts and reference EMA/ESCOP/WHO monographs where available</p>
+        </div>
+      </div>
+    </section>
+    <p class="note">This page is a structured prompt for deeper research on Plantain; update with locale-specific agronomy and clinical references when available.</p>
+  </div>
+</body>
+</html>
